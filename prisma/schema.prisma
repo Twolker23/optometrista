@@ -137,6 +137,7 @@ model Appointment {
 model Photo {
   id                String       @id @default(cuid())
   cloudStoragePath  String
+  url               String?      // ✅ URL pública/privada do arquivo (opcional)
   isPublic          Boolean      @default(false)
   uploadDate        DateTime     @default(now())
   appointment       Appointment?
