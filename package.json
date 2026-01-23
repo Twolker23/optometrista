@@ -3,13 +3,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && prisma migrate deploy && next build",
     "start": "next start",
     "lint": "next lint"
   },
   "prisma": {
-  "seed": "tsx --require dotenv/config prisma/seed.ts"
-},
+    "seed": "tsx --require dotenv/config prisma/seed.ts"
+  },
   "devDependencies": {
     "@next/swc-wasm-nodejs": "13.5.1",
     "@types/node": "20.6.2",
